@@ -21,5 +21,30 @@ taskController.getTask = async (req, res) => {
     }
 }
 
+taskController.updateTask = async (req, res) => {
+    try {
+        const updateTask = await Task.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true, runValidators: true } // req.body에 스키마 검증을 적용
+        );
+        if (!updateTask) {
+            return res.status(404).json({ message: 'Task not found' });
+        }
+        res.status(200).json({ status: 'ok', data: updateTask });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', error: err})
+    }
+}
+
+taskController.deleteTask = async (req, res) => {
+    try {
+        const deleteItem = await Task.findByIdAndDelete(req.params.id);
+        res.status(200).json({ status: 'ok', data: deleteItem });
+    } catch (err) {
+        res.status(400).json({ status: 'fail', error: err });
+    }
+}
+
 
 module.exports = taskController;
