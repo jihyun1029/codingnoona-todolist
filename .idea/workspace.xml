@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e46d32ed-8de8-4c86-83bc-b003cd1aefc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/todo-fe/public/_redirects" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-be/controller/user.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-be/model/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/todo-be/routes/user.api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-fe/.env" beforeDir="false" afterPath="$PROJECT_DIR$/todo-fe/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-fe/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/todo-fe/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-fe/src/utils/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-fe/src/utils/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-be/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-be/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-be/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-be/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-be/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/todo-be/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/routes/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +66,7 @@
       <workItem from="1752716379695" duration="22148000" />
       <workItem from="1753348191178" duration="735000" />
       <workItem from="1753348936192" duration="637000" />
-      <workItem from="1753373912855" duration="9873000" />
+      <workItem from="1753373912855" duration="20635000" />
     </task>
     <servers />
   </component>

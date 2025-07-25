@@ -1,1 +1,45 @@
-/node_modules
+# Node modules (필수!)
+node_modules/
+
+# 환경 변수 파일 (비밀번호, API 키 등 민감 정보 포함)
+.env
+
+# 로그 파일
+logs/
+*.log
+npm-debug.log*
+
+# 운영 체제별 설정 파일
+.DS_Store         # macOS
+Thumbs.db         # Windows
+
+# VS Code 등의 에디터 설정 (원한다면)
+.vscode/
+
+# 빌드 결과물 (사용 중인 도구에 따라)
+dist/
+build/
+out/
+
+# 테스트 관련 임시 파일
+coverage/
+
+# MongoDB 데이터 디렉터리 (로컬에서 mongod를 직접 실행하는 경우)
+data/
+
+# Yarn 사용 시
+.yarn/
+.yarnrc
+
+# dotenv 환경 설정 캐시
+.env.local
+.env.*.local
+
+# TypeScript 프로젝트일 경우
+*.tsbuildinfo
+
+# PM2 logs (서버 관리 도구)
+pids
+*.pid
+*.seed
+*.pid.lock
