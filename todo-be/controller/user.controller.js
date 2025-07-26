@@ -23,4 +23,31 @@ userController.createUser = async (req, res) => {
     }
 }
 
+userController.loginWithEmail = async (req, res) => {
+    try {
+        // 2. 이메일 패스워드 정보 읽어오기
+        const {email, password} = req.body;
+        // 3. 이메일을 가지고 유저정보 가져오기
+        const user = await User.findOne({email}, "-createdAt -updatedAt -__v")
+        if(user) {
+            // password ==> 유저가 입력한 그 자체
+            // user.password => 암호화된 패스워드
+            // 어떻게 비교?
+            const isMath = await bcrypt.compare(password, user.password);
+            if(isMath) {
+                // 5. 맞다! 그러면 토큰 발행
+                // 토큰은 model/User.js에서 만들꺼다. 왜? User와 관련이 있기 때문에 같이 모아두는 것.
+                // 5. 맞다! 그러면 토큰 발행
+                const token = user.generateToken();
+                // 7. 응답으로 유저정보 + 토큰 보냄
+                return res.status(200).json({status: 'success', user, token})
+            }
+        }
+        // 6. 틀리면 에러메세지 보냄
+        throw new Error('아이디 또는 비밀번호가 일차하지 않습니다')
+    } catch (error) {
+        res.status(400).json({status: 'fail', error});
+    }
+}
+
 module.exports = userController
