@@ -1,5 +1,5 @@
 const User = require('../model/User')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 const saltRounds = 10
 
 const userController = {}
@@ -11,8 +11,8 @@ userController.createUser = async (req, res) => {
         if(user) {
             throw new Error('이미 가입이 된 유저 입니다')
         }
-        const salt = bcrypt.genSaltSync(saltRounds);
-        const hash = await bcrypt.hash(password, saltRounds);
+        const salt = await bcrypt.genSalt(saltRounds);
+        const hash = await bcrypt.hash(password, salt);
         console.log("hash", hash);
         const newUser = new User({email, name, password:hash});
         await newUser.save();
