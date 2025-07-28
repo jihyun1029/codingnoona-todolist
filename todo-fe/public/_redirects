@@ -1,1 +1,5 @@
-/api/* http://todolist-demo.ap-northeast-2.elasticbeanstalk.com/api/:splat 200
+# API 요청은 백엔드로 프록시
+/api/*  http://todolist-demo.ap-northeast-2.elasticbeanstalk.com/api/:splat  200
+
+# 나머지 모든 경로는 index.html로 리디렉션 (SPA 지원)
+/*      /index.html  200
