@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e46d32ed-8de8-4c86-83bc-b003cd1aefc4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/todo-fe/src/setupProxy.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-be/controller/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-be/controller/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-fe/src/pages/LoginPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-fe/src/pages/LoginPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/todo-fe/src/pages/RegisterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/todo-fe/src/pages/RegisterPage.js" afterDir="false" />
-    </list>
+    <list default="true" id="e46d32ed-8de8-4c86-83bc-b003cd1aefc4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,6 +38,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -79,5 +75,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
