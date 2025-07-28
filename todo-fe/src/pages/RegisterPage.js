@@ -8,7 +8,7 @@ const RegisterPage = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [secPassword, setSecpassword] = useState('')
+  const [secPassword, setSecPassword] = useState('')
   const [error, setError] = useState('')
   const navigate = useNavigate()
 
@@ -49,7 +49,7 @@ const RegisterPage = () => {
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Label>re-enter the password</Form.Label>
-          <Form.Control type="password" placeholder="re-enter the password" onChange={(event) => setSecpassword(event.target.value)} />
+          <Form.Control type="password" placeholder="re-enter the password" onChange={(event) => setSecPassword(event.target.value)} />
         </Form.Group>
 
         <Button className="button-primary" type="submit">

@@ -33,8 +33,9 @@ userController.loginWithEmail = async (req, res) => {
             // password ==> 유저가 입력한 그 자체
             // user.password => 암호화된 패스워드
             // 어떻게 비교?
-            const isMath = await bcrypt.compare(password, user.password);
-            if(isMath) {
+            const isMatch = await bcrypt.compare(password, user.password);
+
+            if(isMatch) {
                 // 5. 맞다! 그러면 토큰 발행
                 // 토큰은 model/User.js에서 만들꺼다. 왜? User와 관련이 있기 때문에 같이 모아두는 것.
                 // 5. 맞다! 그러면 토큰 발행
@@ -46,7 +47,7 @@ userController.loginWithEmail = async (req, res) => {
         // 6. 틀리면 에러메세지 보냄
         throw new Error('아이디 또는 비밀번호가 일차하지 않습니다')
     } catch (error) {
-        res.status(400).json({status: 'fail', error});
+        res.status(400).json({status: 'fail', message: error.message});
     }
 }
 
