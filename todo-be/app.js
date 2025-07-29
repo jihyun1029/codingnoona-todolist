@@ -8,7 +8,10 @@ require('dotenv').config()
 const app = express();
 const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD;
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:3000', 'https://playful-kheer-b6f205.netlify.app', 'https://*.netlify.app', 'http://todolist-demo.ap-northeast-2.elasticbeanstalk.com'],
+  credentials: true
+}))
 app.use('/api', indexRouter)
 const mongoURI = MONGODB_URI_PROD;
 
