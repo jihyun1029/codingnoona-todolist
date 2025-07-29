@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: `${process.env.REACT_APP_BACKEND_URL || 'http://todolist-demo.ap-northeast-2.elasticbeanstalk.com'}/api`,
+  baseURL: `${process.env.REACT_APP_BACKEND_URL}/api`,
   headers: {
     "Content-Type": "application/json",
   },
