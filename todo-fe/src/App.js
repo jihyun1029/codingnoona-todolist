@@ -24,8 +24,12 @@ function App() {
     };
 
     useEffect(() => {
-        getUser()
-    }, [])
+        // 컴포넌트 마운트 시 토큰이 있으면 사용자 정보 가져오기
+        const token = sessionStorage.getItem("token");
+        if (token) {
+            getUser();
+        }
+    }, []); // 빈 의존성 배열로 마운트 시에만 실행
     return (
         <Routes>
             <Route path="/" element={
@@ -35,7 +39,7 @@ function App() {
             />
             <Route path="/register" element={<RegisterPage />} />
 
-            <Route path="/login" element={<LoginPage user={user} setUser={setUser} />} />
+            <Route path="/login" element={<LoginPage user={user} setUser={setUser} getUser={getUser} />} />
         </Routes>
     );
 }

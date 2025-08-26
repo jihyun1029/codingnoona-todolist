@@ -21,9 +21,9 @@ const userSchema = Schema({
 
 // 언제 호출을 하던 패스워드를 빼고 보내주겠다.
 userSchema.methods.toJSON = function () {
-    const obj = this._doc;
+    const obj = this.toObject();
     delete obj.password;
-    delete obj.updateAt;
+    delete obj.updatedAt;
     delete obj.__v;
     return obj;
 }
