@@ -54,7 +54,7 @@ userController.loginWithEmail = async (req, res) => {
 userController.getUser = async(req, res) => {
     try {
         const {userId} = req // req.userId
-        const user = await User.findById(userId);
+        const user = await User.findById(userId); // auth.controller에서 userId를 가져와야 하는데 어떻게 가져올까? 미들웨어 next() 사용
         if(!user) {
             throw new Error("can not find user");
         }

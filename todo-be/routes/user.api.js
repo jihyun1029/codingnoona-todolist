@@ -12,5 +12,5 @@ router.post("/login", userController.loginWithEmail);
 // url에 이메일과 패스워드를 넣을 수 없으니 post를 사용한다.
 
 // 토큰을 통해 유저 id 빼내고 => 그 아이디로 유저 객체 찾아서 보내주기
-router.get("/me", authController.authenticate, userController.getUser)
+router.get("/me", authController.authenticate, userController.getUser);
 module.exports = router;

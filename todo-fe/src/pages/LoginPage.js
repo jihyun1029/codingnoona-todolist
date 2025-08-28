@@ -4,7 +4,7 @@ import Form from "react-bootstrap/Form";
 import api from '../utils/api';
 import { Link, useNavigate, Navigate } from "react-router-dom";
 
-const LoginPage = ({ user, setUser, getUser }) => {
+const LoginPage = ({ user, setUser }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -17,17 +17,10 @@ const LoginPage = ({ user, setUser, getUser }) => {
       const response = await api.post('/user/login', {email, password});
       console.log('rrr', response);
       if(response.status === 200) {
-        // 로그인 성공하면 sessionStorage에 저장하기
-        sessionStorage.setItem('token', response.data.token);
-        // 인터셉터에서 자동으로 헤더에 토큰을 추가하므로 여기서는 설정하지 않음
-        
-        // 사용자 정보 설정
         setUser(response.data.user);
+        sessionStorage.setItem('token', response.data.token);
+        api.defaults.headers["authorization"] = "Bearer " + response.data.token;
         setError('');
-        
-        // 로그인 성공 후 사용자 정보 다시 가져오기
-        getUser();
-        
         navigate('/');
       }
       throw new Error(response.message)
