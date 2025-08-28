@@ -4,7 +4,9 @@ const taskController = {}
 taskController.createTask = async (req, res) => {
     try {
         const { task, isComplete } = req.body;
-        const newTask = new Task({task, isComplete})
+        const {userId} = req;
+        // const newTask = new Task({task, isComplete});
+        const newTask = new Task({task, isComplete, author: userId});
         await newTask.save();
         res.status(200).json({ status: 'ok', data: newTask });
     } catch (err) {
@@ -14,9 +16,12 @@ taskController.createTask = async (req, res) => {
 
 taskController.getTask = async (req, res) => {
     try {
-        const taskList = await Task.find({}).select("-__v");
+        console.log("=== getTask 호출됨 ===");
+        const taskList = await Task.find({}).populate("author", "name email");
+        console.log("populate 후 taskList:", JSON.stringify(taskList, null, 2));
         res.status(200).json({ status: 'ok', data: taskList });
     } catch (err) {
+        console.error("getTask 에러:", err);
         res.status(400).json({ status: 'fail', error: err });
     }
 }

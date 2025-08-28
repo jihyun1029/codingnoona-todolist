@@ -10,6 +10,11 @@ const taskSchema = Schema({
         type: Boolean,
         required: true,
     },
+    author: {
+        type: Schema.Types.ObjectId, // _id 가져오기
+        required: true,
+        ref: "User" // 어디의 아이디를 가져올껀지? User를 참조할 것이다.
+    },
 },
 { timestamps: true }
 );
