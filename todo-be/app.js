@@ -5,10 +5,6 @@ const bodyParser = require('body-parser')
 const indexRouter = require('./routes/index')
 require('dotenv').config()
 
-// 모델들을 import하여 Mongoose가 참조할 수 있도록 함
-require('./model/User')
-require('./model/Task')
-
 const app = express();
 const MONGODB_URI_PROD = process.env.MONGODB_URI_PROD;
 app.use(bodyParser.json());

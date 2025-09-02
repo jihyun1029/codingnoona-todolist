@@ -10,16 +10,9 @@ const TodoPage = () => {
   const [todoValue, setTodoValue] = useState("");
 
   const getTasks = async () => {
-    try {
-      const response = await api.get("/tasks");
-      console.log("전체 응답:", response);
-      console.log("taskList", response.data.data);
-      console.log("첫 번째 task의 author:", response.data.data[0]?.author);
-      setTodoList(response.data.data);
-    } catch (error) {
-      console.log("getTasks error:", error);
-      setTodoList([]);
-    }
+    const response = await api.get("/tasks");
+    console.log("taskList", response.data.data);
+    setTodoList(response.data.data);
   };
   useEffect(() => {
     getTasks();

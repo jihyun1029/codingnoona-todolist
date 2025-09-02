@@ -18,7 +18,7 @@ authController.authenticate = (req, res, next) => {
             }
             // res.status(200).json({status: "success", userId: payload._id});
             // User.findById(userId); 여기서 사용 X. why? 토큰이 유효한지 아닌지 판별하는 함수이기 때문에 user.controller 에서 사용
-            req.userId = payload._id
+            req.userId = payload._id;
         });
         next(); // 여기서 다음이 뭔지 어떻게 알까? user.api에서
     } catch (error) {
