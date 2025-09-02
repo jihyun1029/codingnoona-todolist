@@ -3,6 +3,28 @@ body{
   background-color: aliceblue !important;
 }
 
+.user-info-row {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: white;
+  border: 1px solid lightblue;
+  border-radius: 5px;
+}
+
+.user-info-row span {
+  font-weight: 600;
+  color: lightblue;
+}
+
+.btn-outline-danger {
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
 
 
 .todo-item{

@@ -10,6 +10,7 @@ import api from "./utils/api";
 
 function App() {
     const [user, setUser] = useState(null);
+    
     const getUser = async () => { // 토큰을 통해 유저정보를 가져온다
         try {
             const storedToken = sessionStorage.getItem("token");
@@ -24,14 +25,20 @@ function App() {
         }
     };
 
+    const logout = () => {
+        sessionStorage.removeItem("token");
+        setUser(null);
+    };
+
     useEffect(() => {
         getUser()
     }, []); // 빈 의존성 배열로 마운트 시에만 실행
+    
     return (
         <Routes>
             <Route path="/" element={
                 <PrivateRoute user={user}>
-                    <TodoPage />
+                    <TodoPage user={user} logout={logout} />
                 </PrivateRoute>}
             />
             <Route path="/register" element={<RegisterPage />} />

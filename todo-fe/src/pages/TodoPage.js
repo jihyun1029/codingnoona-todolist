@@ -5,7 +5,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 
-const TodoPage = () => {
+const TodoPage = ({ user, logout }) => {
   const [todoList, setTodoList] = useState([]);
   const [todoValue, setTodoValue] = useState("");
 
@@ -57,8 +57,21 @@ const TodoPage = () => {
       console.log("error", error);
     }
   };
+  
   return (
     <Container>
+      {/* 사용자 정보 및 로그아웃 버튼 */}
+      <Row className="user-info-row mb-3">
+        <Col xs={12} className="d-flex justify-content-between align-items-center">
+          <div>
+            <span className="me-3">안녕하세요, {user?.name || '사용자'}님!</span>
+          </div>
+          <button onClick={logout} className="btn btn-outline-danger">
+            로그아웃
+          </button>
+        </Col>
+      </Row>
+
       <Row className="add-item-row">
         <Col xs={12} sm={10}>
           <input
